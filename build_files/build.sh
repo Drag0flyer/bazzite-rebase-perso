@@ -14,8 +14,10 @@ dnf5 -y install \
     hyprland \
     hyprland-guiutils \
     xdg-desktop-portal-hyprland \
+    hyprpolkitagent \
+    dunst \
+    hyprlauncher \
     waybar \
-    rofi-wayland \
     swaync \
     hyprlock \
     hypridle \
