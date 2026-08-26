@@ -5,9 +5,8 @@ set -ouex pipefail
 # Copie des fichiers système du dépôt vers /
 cp -avf "/ctx/system_files"/. /
 
-### Activation des dépôts COPR
+### Activation des dépôts COPR valides
 dnf5 -y copr enable lionheartp/Hyprland
-dnf5 -y copr enable maveonair/jetbrains-mono-nerd-fonts
 dnf5 -y copr enable atim/starship
 
 ### Installation des paquets via DNF
@@ -34,13 +33,10 @@ dnf5 -y install \
     fd-find \
     fontawesome-fonts \
     google-noto-emoji-fonts \
-    starship \
-    jetbrains-mono-nerd-fonts \
-    jetbrains-mononl-nerd-fonts
+    starship
 
-### Désactivation des dépôts COPR (pour ne pas polluer l'image finale)
+### Désactivation des dépôts COPR
 dnf5 -y copr disable lionheartp/Hyprland
-dnf5 -y copr disable maveonair/jetbrains-mono-nerd-fonts
 dnf5 -y copr disable atim/starship
 
 ### Services système
