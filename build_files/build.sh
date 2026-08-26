@@ -12,6 +12,7 @@ dnf5 -y copr enable atim/starship
 ### Installation des paquets via DNF
 dnf5 -y install \
     hyprland \
+    hyprland-guiutils \
     xdg-desktop-portal-hyprland \
     waybar \
     rofi-wayland \
