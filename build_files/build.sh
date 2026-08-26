@@ -2,26 +2,41 @@
 
 set -ouex pipefail
 
-# Copy the contents of system_files/ of the git repo to /
+# Copie des fichiers système du dépôt vers /
 cp -avf "/ctx/system_files"/. /
 
-### Install packages
+### Dépôt COPR pour l'écosystème Hyprland
+dnf5 -y copr enable solopasha/hyprland
 
-# Packages can be installed from any enabled yum repo on the image.
-# RPMfusion repos are available by default in ublue main images
-# List of rpmfusion packages can be found here:
-# https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/43/x86_64/repoview/index.html&protocol=https&redirect=1
+### Installation de TES paquets
+dnf5 -y install \
+    hyprland \
+    xdg-desktop-portal-hyprland \
+    waybar \
+    rofi-wayland \
+    swaync \
+    hyprlock \
+    hypridle \
+    hyprpaper \
+    polkit-gnome \
+    grim \
+    slurp \
+    brightnessctl \
+    pavucontrol \
+    kitty \
+    zsh \
+    starship \
+    zoxide \
+    eza \
+    bat \
+    ripgrep \
+    fd-find \
+    jetbrains-mono-nerd-fonts \
+    fontawesome-fonts \
+    noto-fonts-emoji
 
-# this installs a package from fedora repos
-dnf5 install -y tmux
+### Désactivation du COPR
+dnf5 -y copr disable solopasha/hyprland
 
-# Use a COPR Example:
-#
-# dnf5 -y copr enable ublue-os/staging
-# dnf5 -y install package
-# Disable COPRs so they don't end up enabled on the final image:
-# dnf5 -y copr disable ublue-os/staging
-
-#### Example for enabling a System Unit File
-
+### Services système
 systemctl enable podman.socket
