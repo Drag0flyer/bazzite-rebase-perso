@@ -5,10 +5,12 @@ set -ouex pipefail
 # Copie des fichiers système du dépôt vers /
 cp -avf "/ctx/system_files"/. /
 
-### Dépôt COPR pour l'écosystème Hyprland (fork compatible Fedora 44)
+### Activation des dépôts COPR
 dnf5 -y copr enable lionheartp/Hyprland
+dnf5 -y copr enable maveonair/jetbrains-mono-nerd-fonts
+dnf5 -y copr enable atim/starship
 
-### Installation de TES paquets
+### Installation des paquets via DNF
 dnf5 -y install \
     hyprland \
     xdg-desktop-portal-hyprland \
@@ -18,25 +20,28 @@ dnf5 -y install \
     hyprlock \
     hypridle \
     hyprpaper \
-    polkit-gnome \
+    polkit-kde \
     grim \
     slurp \
     brightnessctl \
     pavucontrol \
     kitty \
     zsh \
-    starship \
     zoxide \
     eza \
     bat \
     ripgrep \
     fd-find \
-    jetbrains-mono-nerd-fonts \
     fontawesome-fonts \
-    noto-fonts-emoji
+    google-noto-emoji-fonts \
+    starship \
+    jetbrains-mono-nerd-fonts \
+    jetbrains-mononl-nerd-fonts
 
-### Désactivation du COPR
+### Désactivation des dépôts COPR (pour ne pas polluer l'image finale)
 dnf5 -y copr disable lionheartp/Hyprland
+dnf5 -y copr disable maveonair/jetbrains-mono-nerd-fonts
+dnf5 -y copr disable atim/starship
 
 ### Services système
 systemctl enable podman.socket
