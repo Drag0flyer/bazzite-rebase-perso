@@ -5,8 +5,8 @@ set -ouex pipefail
 # Copie des fichiers système du dépôt vers /
 cp -avf "/ctx/system_files"/. /
 
-### Dépôt COPR pour l'écosystème Hyprland
-dnf5 -y copr enable solopasha/hyprland
+### Dépôt COPR pour l'écosystème Hyprland (fork compatible Fedora 44)
+dnf5 -y copr enable lionheartp/Hyprland
 
 ### Installation de TES paquets
 dnf5 -y install \
@@ -36,7 +36,7 @@ dnf5 -y install \
     noto-fonts-emoji
 
 ### Désactivation du COPR
-dnf5 -y copr disable solopasha/hyprland
+dnf5 -y copr disable lionheartp/Hyprland
 
 ### Services système
 systemctl enable podman.socket
