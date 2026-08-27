@@ -20,6 +20,8 @@ dnf5 -y install \
     hyprlauncher \
     waybar \
     hyprlock \
+    swappy \
+    NetworkManager-tui \
     hypridle \
     hyprpaper \
     grim \
