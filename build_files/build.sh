@@ -8,6 +8,7 @@ cp -avf "/ctx/system_files"/. /
 ### Activation des dépôts COPR valides
 dnf5 -y copr enable lionheartp/Hyprland
 dnf5 -y copr enable atim/starship
+dnf5 -y copr enable che/nerd-fonts
 
 ### Installation des paquets via DNF
 dnf5 -y install \
@@ -18,11 +19,9 @@ dnf5 -y install \
     dunst \
     hyprlauncher \
     waybar \
-    swaync \
     hyprlock \
     hypridle \
     hyprpaper \
-    polkit-kde \
     grim \
     slurp \
     brightnessctl \
@@ -36,11 +35,13 @@ dnf5 -y install \
     fd-find \
     fontawesome-fonts \
     google-noto-emoji-fonts \
+    nerd-fonts \
     starship
 
 ### Désactivation des dépôts COPR
 dnf5 -y copr disable lionheartp/Hyprland
 dnf5 -y copr disable atim/starship
+dnf5 -y copr disable che/nerd-fonts
 
 ### Services système
 systemctl enable podman.socket
