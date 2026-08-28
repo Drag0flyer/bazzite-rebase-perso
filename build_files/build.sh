@@ -12,35 +12,36 @@ dnf5 -y copr enable che/nerd-fonts
 
 ### Installation des paquets via DNF
 dnf5 -y install \
-    hyprland \
-    hyprland-guiutils \
-    xdg-desktop-portal-hyprland \
-    hyprpolkitagent \
-    dunst \
-    hyprlauncher \
-    waybar \
-    hyprlock \
-    swappy \
-    NetworkManager-tui \
-    hypridle \
-    hyprpaper \
-    grim \
-    slurp \
-    brightnessctl \
-    pavucontrol \
-    kitty \
-    zsh \
-    zoxide \
-    eza \
-    bat \
-    ripgrep \
-    fd-find \
-    fontawesome-fonts \
-    google-noto-emoji-fonts \
-    nerd-fonts \
-    gcc-c++ \
-    neovim \
-    starship
+  noctalia \
+  hyprland \
+  hyprland-guiutils \
+  xdg-desktop-portal-hyprland \
+  hyprpolkitagent \
+  dunst \
+  hyprlauncher \
+  waybar \
+  hyprlock \
+  swappy \
+  NetworkManager-tui \
+  hypridle \
+  hyprpaper \
+  grim \
+  slurp \
+  brightnessctl \
+  pavucontrol \
+  kitty \
+  zsh \
+  zoxide \
+  eza \
+  bat \
+  ripgrep \
+  fd-find \
+  fontawesome-fonts \
+  google-noto-emoji-fonts \
+  nerd-fonts \
+  gcc-c++ \
+  neovim \
+  starship
 
 ### Désactivation des dépôts COPR
 dnf5 -y copr disable lionheartp/Hyprland
