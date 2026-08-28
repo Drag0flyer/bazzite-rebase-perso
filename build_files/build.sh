@@ -38,6 +38,8 @@ dnf5 -y install \
     fontawesome-fonts \
     google-noto-emoji-fonts \
     nerd-fonts \
+    gcc-c++ \
+    neovim \
     starship
 
 ### Désactivation des dépôts COPR
