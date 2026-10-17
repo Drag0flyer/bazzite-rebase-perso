@@ -10,21 +10,27 @@ dnf5 -y copr enable lionheartp/Hyprland
 dnf5 -y copr enable atim/starship
 dnf5 -y copr enable che/nerd-fonts
 
+### Paquets remplacés par Noctalia — conservés temporairement comme référence
+# hyprpolkitagent
+# dunst
+# hyprlauncher
+# waybar
+# hyprlock
+# hypridle
+# hyprpaper
+
+### Résolution du conflit Xwayland spécifique à Bazzite / Terra
+# Remplace le paquet Xwayland de Terra par le paquet Fedora standard requis par Hyprland
+dnf5 -y swap terra-xorg-x11-server-Xwayland xorg-x11-server-Xwayland --allowerasing
+
 ### Installation des paquets via DNF
 dnf5 -y install \
   noctalia \
   hyprland \
   hyprland-guiutils \
   xdg-desktop-portal-hyprland \
-  hyprpolkitagent \
-  dunst \
-  hyprlauncher \
-  waybar \
-  hyprlock \
   swappy \
   NetworkManager-tui \
-  hypridle \
-  hyprpaper \
   grim \
   slurp \
   brightnessctl \
