@@ -42,10 +42,7 @@ dnf5 -y install \
   bat \
   ripgrep \
   fd-find \
-  fontawesome-fonts \
-  google-noto-emoji-fonts \
-  nerd-fonts \
-  gcc-c++ \
+  fontawesome-fonts-all \
   neovim \
   starship
 
