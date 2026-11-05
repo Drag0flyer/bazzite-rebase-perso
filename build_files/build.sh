@@ -44,7 +44,8 @@ dnf5 -y install \
   fd-find \
   fontawesome-fonts-all \
   neovim \
-  starship
+  starship \
+  wireshark
 
 ### Désactivation des dépôts COPR
 dnf5 -y copr disable lionheartp/Hyprland
